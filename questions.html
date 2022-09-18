@@ -1,0 +1,367 @@
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: 'PT Sans', sans-serif;
+        }
+        
+        .a {
+            height: 15vh;
+            width: 102%;
+            position: fixed;
+            top: 0px;
+            left: -1%;
+            background-color: #373636;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+        
+        .a>label {
+            font-size: 60px;
+            color: white;
+        }
+        
+        .b {
+            height: 85vh;
+            width: 102%;
+            position: fixed;
+            top: 15vh;
+            left: -1%;
+            background-color: #e9ecef;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+        
+        .c {
+            height: 70vh;
+            width: 70vw;
+            position: relative;
+            top: 3vh;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 2px 2px 5px #adb5bd, -2px -2px 5px #adb5bd;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            line-height: 40px;
+            gap: 20px;
+        }
+        
+        #qus {
+            font-size: 35px;
+            font-weight: bold;
+        }
+        
+        .c1 {
+            font-size: 30px;
+        }
+        
+        .c1,
+        .c2 {
+            width: 90%;
+        }
+        
+        .c2 {
+            height: 15vh;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        #b1 {
+            height: 50px;
+            width: 80px;
+            border-radius: 5px;
+            background-color: #ffc107;
+            font-weight: bold;
+            border: 0px;
+            font-size: 16px;
+        }
+        
+        #b2 {
+            height: 40px;
+            width: 60px;
+            border-radius: 5px;
+            font-weight: bold;
+            background-color: #187b28;
+            color: white;
+            border: 0px;
+        }
+        
+        #t1 {
+            height: 60px;
+            width: 120px;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            border-radius: 5px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #b3 {
+            height: 50px;
+            width: 80px;
+            border-radius: 5px;
+            background-color: #1fc3eb;
+            font-weight: bold;
+            color: white;
+            border: 0px;
+            font-size: 16px;
+        }
+        
+        #c1 {
+            font-size: 14px;
+        }
+        
+        #c1,
+        #c2 {
+            width: 90%;
+        }
+        
+        #c2 {
+            height: 10vh;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        #lll1 {
+            background-color: #7aec9d;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form name="f">
+        <div class="a">
+            <label id="aa">Quiz</label>
+        </div>
+        <div class="b">
+            <div class="c">
+                <div class="c1">
+                    <label id="qus"></label><br><br>
+                    <input type="radio" style="transform: scale(1.5)" id="o1" name="ans" value="">
+                    <label id="op1"></label><br>
+                    <input type="radio" id="o2" style="transform: scale(1.5)" name="ans" value="">
+                    <label id="op2"></label><br>
+                    <input type="radio" id="o3" style="transform: scale(1.5)" name="ans" value="">
+                    <label id="op3"></label><br>
+                    <input type="radio" id="o4" style="transform:scale(1.5)" name="ans" value="">
+                    <label id="op4"></label>
+
+                </div>
+                <div class="c2">
+                </div>
+
+            </div>
+        </div>
+        <form>
+            <script>
+                let j = 0;
+                let res = 0;
+                const question = [{
+                        qus: "1.Javascript is an _____language?",
+                        op1: "Object-Oriented",
+                        op2: "Object-Based",
+                        op3: "Procedural",
+                        op4: "None of the above",
+                        ans: "Object-Oriented",
+                    }, {
+                        qus: "2.Which of the following methods is used to access HTML elements using Javascript?",
+                        op1: "var",
+                        op2: "let",
+                        op3: "Both A and B",
+                        op4: "None of the above",
+                        ans: "Both A and B",
+                    }, {
+                        qus: "3.Which of the following method is used to access HTML element using Javascript?",
+                        op1: "getElementById()",
+                        op2: "getElementsByClassName()",
+                        op3: "Both A and B",
+                        op4: "None of the above",
+                        ans: "Both A and B",
+                    }, {
+                        qus: "4.Upon encountering empty statements, what does the Javascript Interpreter do?",
+                        op1: "Throws an error",
+                        op2: "Ignores the statements",
+                        op3: "Gives a warning",
+                        op4: "None of the above",
+                        ans: "Ignores the statements",
+                    }, {
+                        qus: "5.Which of the following methods can be used to display data in some form using Javascript?",
+                        op1: "document.write()",
+                        op2: "console.log()",
+                        op3: "window.alert()",
+                        op4: "All of the above",
+                        ans: "All of the above",
+                    }, {
+                        qus: "6.How can a datatype be declared to be a constant type?",
+                        op1: "const",
+                        op2: "var",
+                        op3: "let",
+                        op4: "None of the above",
+                        ans: "const",
+                    }, {
+                        qus: "7.What keyword is used to check whether a given property is valid or not?",
+                        op1: "in",
+                        op2: "is in",
+                        op3: "exists",
+                        op4: "None of the above",
+                        ans: "in",
+                    },
+
+                    {
+                        qus: "8.What is the use of the noscript tag in Javascript?",
+                        op1: "The contents are displayed by non-JS-based browsers.",
+                        op2: "Clear allthe cookies and cache.",
+                        op3: "Both A abd B",
+                        op4: "None of the above",
+                        ans: "The contents are displayed by non-JS-based browsers.",
+                    }, {
+                        qus: "9.When an operator value is NULL, the typeof returned by the unary operator is:",
+                        op1: "Boolean",
+                        op2: "Undefined",
+                        op3: "Object",
+                        op4: "None of the above",
+                        ans: "Object",
+                    }, {
+                        qus: "10.Which function is used to serialize an object into a JSON string in Javascript?",
+                        op1: "stringify()",
+                        op2: "parse()",
+                        op3: "convert()",
+                        op4: "None of the above",
+                        ans: "stringify()",
+                    }
+                ];
+
+                f();
+
+                function f() {
+                    document.getElementById('qus').innerHTML = question[j].qus;
+                    document.getElementById('op1').innerHTML = question[j].op1;
+                    document.getElementById('o1').value = question[j].op1;
+                    document.getElementById('op2').innerHTML = question[j].op2;
+                    document.getElementById('o2').value = question[j].op2;
+                    document.getElementById('op3').innerHTML = question[j].op3;
+                    document.getElementById('o3').value = question[j].op3;
+                    document.getElementById('op4').innerHTML = question[j].op4;
+                    document.getElementById('o4').value = question[j].op4;
+                    const d = document.querySelector('div.c2');
+                    const s1 = document.createElement("button");
+                    s1.id = "b1";
+                    s1.addEventListener("click", fun);
+                    s1.innerHTML = "Submit";
+                    d.appendChild(s1);
+                }
+
+                function fun() {
+                    const i = document.getElementById('b1');
+                    let b = document.f.ans.value;
+                    if (!b) {
+                        alert("Please Select Option", );
+                    }
+                    if (b) {
+                        i.remove();
+                        document.getElementById("o1").disabled = true;
+                        document.getElementById("o2").disabled = true;
+                        document.getElementById("o3").disabled = true;
+                        document.getElementById("o4").disabled = true;
+
+                        const d = document.querySelector('div.c2')
+                        const s1 = document.createElement("div");
+                        s1.id = "t1";
+                        if (b == question[j].ans) {
+                            res++;
+                            s1.innerHTML = "Correct";
+                            s1.style.color = "#032616";
+                            s1.style.backgroundColor = "#7aec9d";
+
+                        } else {
+                            s1.innerHTML = "Incorrect";
+                            s1.style.color = "#a0000f";
+                            s1.style.backgroundColor = "#ff5353";
+
+                        }
+                        d.appendChild(s1);
+
+                        const s2 = document.createElement("button");
+                        s2.id = "b2";
+                        s2.innerHTML = "Next";
+                        s2.addEventListener("click", fun1);
+                        d.appendChild(s2);
+                    }
+
+                }
+
+                function fun1() {
+                    document.getElementById("o1").disabled = false;
+                    document.getElementById("o2").disabled = false;
+                    document.getElementById("o3").disabled = false;
+                    document.getElementById("o4").disabled = false;
+                    document.getElementById("o1").checked = false;
+                    document.getElementById("o2").checked = false;
+                    document.getElementById("o3").checked = false;
+                    document.getElementById("o4").checked = false;
+
+                    j++;
+                    if (j < 10) {
+                        document.getElementById('t1').remove();
+                        document.getElementById('b2').remove();
+                        f();
+                    } else {
+                        document.getElementById('aa').innerHTML = "Score : " + res;
+                        document.querySelector('div.c1').remove();
+                        document.querySelector('div.c2').remove();
+                        const x = document.querySelector('div.c');
+                        x.style.height = "60vh";
+                        const v = document.createElement('div');
+                        v.id = "c1";
+                        x.appendChild(v);
+                        const n = document.getElementById('c1');
+                        const n1 = document.createElement('h2');
+                        n1.innerHTML = "Answer Key<br>";
+                        n.appendChild(n1);
+                        for (let k = 0; k < 10; k++) {
+                            const v = document.getElementById('c1');
+                            const l = document.createElement('label');
+                            const l1 = document.createElement('label');
+                            l1.id = "lll1";
+                            if (k == 0) {
+                                l.innerHTML = question[k].qus + "  :  ";
+                            } else {
+                                l.innerHTML = "<br>" + question[k].qus + "  :  ";
+                            }
+                            l1.innerHTML = question[k].ans;
+                            v.appendChild(l);
+                            v.appendChild(l1);
+                        }
+
+                        const v1 = document.createElement('div');
+                        v1.id = "c2";
+                        const s1 = document.createElement('button');
+                        s1.id = "b3";
+                        s1.addEventListener("click", fun2);
+                        s1.innerHTML = "Restart";
+                        v1.appendChild(s1);
+                        x.append(v1);
+
+                    }
+
+                }
+
+                function fun2() {
+                    f();
+                }
+            </script>
+
+</body>
+
+</html>
